@@ -2,7 +2,12 @@ FROM ubuntu:14.04
 
 RUN apt-get update && \
   apt-get -y dist-upgrade && \
-  apt-get -y install openssh-client curl npm
+  apt-get -y install openssh-client curl
+
+# Install NodeJS and NPM
+# See https://github.com/nodesource/distributions
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
 
 # Install NVM (Node Version Manager)
 # See https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-14-04-lts/
