@@ -15,12 +15,15 @@ pipeline {
               sh 'node --version || true'
               sh 'npm --version || true'
               echo 'INFO: Building backend'
-              git 'https://github.com/kuruho/backend'
+              sh 'git clone https://github.com/kuruho/backend.git'
               // See https://issues.jenkins-ci.org/browse/JENKINS-33510
               sh 'pwd'
               sh 'ls -la'
+              sh 'cd backend'
+              sh 'pwd'
+              sh 'ls -la'
               sh 'npm --verbose install'
-              sh 'NODE_ENV=production PORT=7001 VOLUMIO_WS=ws://192.168.40.61 node app.js'
+              sh 'NODE_ENV=production PORT=7001 VOLUMIO_WS=ws://192.168.40.10 node app.js'
             }
           },
           "Build-frontend": {
