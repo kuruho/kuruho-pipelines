@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 RUN apt-get update && \
   apt-get -y dist-upgrade && \
-  apt-get -y install openssh-client curl
+  apt-get -y install openssh-client curl git
 
 # Install NodeJS and NPM
 # See https://github.com/nodesource/distributions
