@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build-backend') {
+    stage('Build') {
       steps {
         parallel(
           "Build-backend": {
