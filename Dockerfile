@@ -6,8 +6,8 @@ RUN apt-get update && \
 
 # Install NodeJS and NPM
 # See https://github.com/nodesource/distributions
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
+RUN curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
 
 # Install NVM (Node Version Manager)
 # See https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-14-04-lts/
