@@ -1,9 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build-backend') {
       steps {
-        echo 'Hello, world!'
+        parallel(
+          "Build-backend": {
+            echo 'TODO: Building backend'
+            
+          },
+          "Build-frontend": {
+            echo 'TODO: Building frontend'
+            
+          }
+        )
       }
     }
   }
