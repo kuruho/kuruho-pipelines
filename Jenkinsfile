@@ -15,5 +15,25 @@ pipeline {
         )
       }
     }
+    stage('Test-on-CI') {
+      steps {
+        echo 'TODO: Testing on CI'
+      }
+    }
+    stage('Deploy-on-staging') {
+      steps {
+        echo 'TODO: Deploying on staging'
+      }
+    }
+    stage('Test-on-staging') {
+      steps {
+        echo 'TODO: Test on staging'
+      }
+    }
+    stage('Deploy-in-production') {
+      steps {
+        echo 'TODO: Deploy in production'
+      }
+    }
   }
 }
