@@ -16,6 +16,12 @@ pipeline {
           },
           "Build-frontend": {
             echo 'TODO: Building frontend'
+            ws(dir: 'frontend') {
+              sh 'node --version || true'
+              sh 'npm --version || true'
+              git 'https://github.com/kuruho/frontend'
+            }
+            
             
           }
         )
