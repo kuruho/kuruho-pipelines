@@ -35,6 +35,10 @@ ssh -p 122 pi@gmhome.solarma.it ssh udooer@10.23.3.31 "hostname"
 
 # EOF
 '''
+        // See https://jenkins.io/doc/pipeline/steps/ssh-agent/
+        sshagent (credentials: ['deploy-dev']) {
+          echo "DEBUG: Inside SSH Agent"
+        }
       }
     }
     stage('Deploy-production') {
