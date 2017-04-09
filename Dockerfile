@@ -2,7 +2,11 @@ FROM ubuntu:14.04
 
 RUN apt-get update && \
   apt-get -y dist-upgrade && \
-  apt-get -y install openssh-client curl nvm npm
+  apt-get -y install openssh-client curl npm
+
+# Install NVM (Node Version Manager)
+# See https://www.liquidweb.com/kb/how-to-install-nvm-node-version-manager-for-node-js-on-ubuntu-14-04-lts/
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 
 # Create user "jenkins"
 RUN id jenkins 2>/dev/null || useradd --uid 1000 --create-home jenkins
