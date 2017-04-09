@@ -8,6 +8,9 @@ pipeline {
   stages {
     stage('Build-backend') {
       steps {
+        echo 'INFO: Testing buildenv for backend'
+        sh 'node --version || true'
+        sh 'npm --version || true'
         echo 'INFO: Building backend'
         git 'https://github.com/kuruho/backend'
         sh './envsetup.sh'
@@ -15,6 +18,9 @@ pipeline {
     }
     stage('Build-frontend') {
       steps {
+        echo 'INFO: Testing buildenv for frontend'
+        sh 'node --version || true'
+        sh 'npm --version || true'
         echo 'INFO: Building frontend'
         git 'https://github.com/kuruho/frontend'
         sh 'npm install'
