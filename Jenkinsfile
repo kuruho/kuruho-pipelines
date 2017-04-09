@@ -2,6 +2,9 @@ pipeline {
   agent {
     dockerfile true
   }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '2'))
+  }
   stages {
     stage('Build') {
       steps {
