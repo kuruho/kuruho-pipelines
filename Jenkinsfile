@@ -8,7 +8,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Hello, world!'
+        echo 'INFO: Building backend'
+        git 'https://github.com/kuruho/backend'
+        sh './envsetup.sh'
       }
     }
     stage('Deploy-test') {
@@ -39,7 +41,7 @@ ls -la
         sshagent (credentials: ['deploy-dev']) {
           echo "DEBUG: Inside SSH Agent"
           // sh 'ssh -o StrictHostKeyChecking=no -l cloudbees 192.168.1.106 uname -a'
-          sh 'ssh -o StrictHostKeyChecking=no -l pi -p 122 gmhome.solarma.it uname -a'
+          // sh 'ssh -o StrictHostKeyChecking=no -l pi -p 122 gmhome.solarma.it uname -a'
         }
       }
     }
