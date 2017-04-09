@@ -6,28 +6,36 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
   }
   stages {
-    stage('Build-backend') {
+    stage('Build') {
       steps {
-        echo 'INFO: Testing buildenv for backend'
-        sh 'node --version || true'
-        sh 'npm --version || true'
-        echo 'INFO: Building backend'
-        git 'https://github.com/kuruho/backend'
-        // TODO sh './envsetup.sh'
+        parallel(
+          "Build-backend": {
+            echo 'INFO: Testing buildenv for backend'
+            sh 'node --version || true'
+            sh 'npm --version || true'
+            echo 'INFO: Building backend'
+            git 'https://github.com/kuruho/backend'
+            // TODO sh './envsetup.sh'
+          },
+          "Build-frontend": {
+            echo 'TODO: Building frontend'
+            echo 'INFO: Testing buildenv for frontend'
+            sh 'node --version || true'
+            sh 'npm --version || true'
+            echo 'INFO: Building frontend'
+            git 'https://github.com/kuruho/frontend'
+            sh 'npm install'
+            // sh 'PORT=8000 npm start'
+          }
+        )
       }
     }
-    stage('Build-frontend') {
+    stage('Test-on-CI') {
       steps {
-        echo 'INFO: Testing buildenv for frontend'
-        sh 'node --version || true'
-        sh 'npm --version || true'
-        echo 'INFO: Building frontend'
-        git 'https://github.com/kuruho/frontend'
-        sh 'npm install'
-        // sh 'PORT=8000 npm start'
+        echo 'TODO: Testing on CI'
       }
-    }
-    stage('Deploy-test') {
+    }    
+    stage('Deploy-to-staging') {
       steps {
         echo 'Hello, world!'
         sh '''#!/bin/bash
@@ -59,8 +67,15 @@ ls -la
         }
       }
     }
-    stage('Deploy-production') {
+    stage('Test-on-staging') {
       steps {
+        echo 'TODO: Test on staging'
+        input message: "Does http://localhost:8888/staging/ look good?"
+      }
+    }    
+    stage('Deploy-to-production') {
+      steps {
+        echo 'TODO: Deploy to production'
         echo 'Hello, world!'
         
         sh '''#!/bin/bash
