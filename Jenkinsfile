@@ -31,7 +31,7 @@ pipeline {
               echo 'INFO: Building frontend'
               git 'https://github.com/kuruho/frontend'
               sh 'npm install'
-              // sh 'PORT=8000 npm start'
+              sh 'PORT=7000 npm start'
             }
           }
         )
