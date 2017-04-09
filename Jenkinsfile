@@ -30,6 +30,7 @@ pipeline {
         echo 'TODO: Test on staging'
       }
     }
+    input message: "Does http://localhost:8888/staging/ look good?"
     stage('Deploy-in-production') {
       steps {
         echo 'TODO: Deploy in production'
