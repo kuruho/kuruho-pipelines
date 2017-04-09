@@ -29,9 +29,12 @@ pipeline {
               sh 'node --version || true'
               sh 'npm --version || true'
               echo 'INFO: Building frontend'
+              sh 'pwd'
+              sh 'ls -la'
               git 'https://github.com/kuruho/frontend'
               sh 'pwd'
               sh 'ls -la'
+              sh 'npm --version'
               sh 'npm install'
               sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'
             }
