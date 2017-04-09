@@ -23,9 +23,9 @@ cat /etc/os-release
 ssh -V
 ssh
 
-# Remote login to udooneomv30 via rpi3gm23
-# ssh -J pi@gmhome.solarma.it:122 udooer@10.23.3.30 "hostname"
-ssh -p 122 pi@gmhome.solarma.it ssh udooer@10.23.3.30 "hostname"
+# Remote login to udooneogm01 via rpi3gm23
+# ssh -J pi@gmhome.solarma.it:122 udooer@10.23.3.31 "hostname"
+ssh -p 122 pi@gmhome.solarma.it ssh udooer@10.23.3.31 "hostname"
 # TODO
 
 # EOF
