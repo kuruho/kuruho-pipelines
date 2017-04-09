@@ -30,6 +30,8 @@ pipeline {
               sh 'npm --version || true'
               echo 'INFO: Building frontend'
               git 'https://github.com/kuruho/frontend'
+              sh 'pwd'
+              sh 'ls -la'
               sh 'npm install'
               sh 'PORT=7000 npm start'
             }
