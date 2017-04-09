@@ -11,8 +11,12 @@ pipeline {
         echo 'Hello, world!'
         sh '''#!/bin/bash
 
+# DEBUG
+ssh --version
+ssh --help
+
 # Remote login to udooneomv30 via rpi3gm23
-ssh -J pi@gmhome.solarma.it:122 udooer@10.23.3.30 "hostname"
+# ssh -J pi@gmhome.solarma.it:122 udooer@10.23.3.30 "hostname"
 # TODO
 
 # EOF
