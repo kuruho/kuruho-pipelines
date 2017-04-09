@@ -16,7 +16,6 @@ pipeline {
               sh 'npm --version || true'
               echo 'INFO: Building backend'
               git 'https://github.com/kuruho/backend'
-              sh 'cd backend'
               // See https://issues.jenkins-ci.org/browse/JENKINS-33510
               sh 'pwd'
               sh 'ls -la'
