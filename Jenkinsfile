@@ -33,7 +33,7 @@ pipeline {
               sh 'pwd'
               sh 'ls -la'
               sh 'npm install'
-              sh 'PORT=7000 npm start'
+              sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'
             }
           }
         )
