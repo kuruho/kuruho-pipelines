@@ -12,7 +12,7 @@ pipeline {
         sh '''#!/bin/bash
 
 # DEBUG
-ssh --version
+ssh -V
 ssh --help
 
 # Remote login to udooneomv30 via rpi3gm23
