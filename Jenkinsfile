@@ -14,6 +14,9 @@ pipeline {
         sh '''#!/bin/bash
 
 # DEBUG
+id
+cat /proc/version
+cat /etc/os-release
 ssh -V
 ssh --help
 
