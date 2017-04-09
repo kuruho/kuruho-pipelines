@@ -35,7 +35,7 @@ pipeline {
               sh 'pwd'
               sh 'ls -la'
               sh 'npm --version'
-              sh 'npm install'
+              sh 'npm --verbose install'
               sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'
             }
           }
