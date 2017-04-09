@@ -13,7 +13,7 @@ pipeline {
         sh 'npm --version || true'
         echo 'INFO: Building backend'
         git 'https://github.com/kuruho/backend'
-        sh './envsetup.sh'
+        // TODO sh './envsetup.sh'
       }
     }
     stage('Build-frontend') {
