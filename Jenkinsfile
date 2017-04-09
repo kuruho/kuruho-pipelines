@@ -11,21 +11,24 @@ pipeline {
         parallel(
           "Build-backend": {
             echo 'INFO: Testing buildenv for backend'
-            sh 'node --version || true'
-            sh 'npm --version || true'
-            echo 'INFO: Building backend'
-            git 'https://github.com/kuruho/backend'
-            // TODO sh './envsetup.sh'
+            ws(dir: 'backend') {
+              sh 'node --version || true'
+              sh 'npm --version || true'
+              echo 'INFO: Building backend'
+              git 'https://github.com/kuruho/backend'
+              // TODO sh './envsetup.sh'
+            }
           },
           "Build-frontend": {
-            echo 'TODO: Building frontend'
             echo 'INFO: Testing buildenv for frontend'
-            sh 'node --version || true'
-            sh 'npm --version || true'
-            echo 'INFO: Building frontend'
-            git 'https://github.com/kuruho/frontend'
-            sh 'npm install'
-            // sh 'PORT=8000 npm start'
+            ws(dir: 'frontend') {
+              sh 'node --version || true'
+              sh 'npm --version || true'
+              echo 'INFO: Building frontend'
+              git 'https://github.com/kuruho/frontend'
+              sh 'npm install'
+              // sh 'PORT=8000 npm start'
+            }
           }
         )
       }
@@ -37,7 +40,7 @@ pipeline {
     }    
     stage('Deploy-to-staging') {
       steps {
-        echo 'Hello, world!'
+        echo 'TODO: Deploy to staging'
         sh '''#!/bin/bash
 
 # DEBUG
