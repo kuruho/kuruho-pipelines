@@ -6,6 +6,12 @@ pipeline {
         parallel(
           "Build-backend": {
             echo 'TODO: Building backend'
+            ws(dir: 'backend') {
+              sh 'node --version || true'
+              sh 'npm --version || true'
+              git 'https://github.com/kuruho/backend'
+            }
+            
             
           },
           "Build-frontend": {
@@ -28,7 +34,7 @@ pipeline {
     stage('Test-on-staging') {
       steps {
         echo 'TODO: Test on staging'
-        input message: "Does http://localhost:8888/staging/ look good?"
+        input 'Does http://localhost:8888/staging/ look good?'
       }
     }
     stage('Deploy-in-production') {
