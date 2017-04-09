@@ -6,11 +6,19 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
   }
   stages {
-    stage('Build') {
+    stage('Build-backend') {
       steps {
         echo 'INFO: Building backend'
         git 'https://github.com/kuruho/backend'
         sh './envsetup.sh'
+      }
+    }
+    stage('Build-frontend') {
+      steps {
+        echo 'INFO: Building frontend'
+        git 'https://github.com/kuruho/frontend'
+        sh 'npm install'
+        // sh 'PORT=8000 npm start'
       }
     }
     stage('Deploy-test') {
