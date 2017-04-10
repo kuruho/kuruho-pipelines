@@ -52,7 +52,7 @@ cd frontend
 pwd
 ls -la
 npm --version
-npm help npm
+npm -h || true
 
 npm --verbose install
 // PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start
