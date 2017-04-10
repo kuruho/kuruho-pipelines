@@ -40,17 +40,20 @@ pipeline {
               
               sh '''#!/bin/bash -xe
 
-node --version || true
-npm --version || true
+node --version
+npm --version
+
 pwd
 ls -la
 rm -rf frontend
 git clone https://github.com/kuruho/frontend
 cd frontend
+
 pwd
 ls -la
-npm --help
 npm --version
+npm help npm
+
 npm --verbose install
 // PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start
 '''
