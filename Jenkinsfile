@@ -24,24 +24,19 @@ pipeline {
           "Build-frontend": {
             echo 'INFO: Testing buildenv for frontend'
             ws(dir: 'frontend') {
-              // sh 'node --version || true'
-              // sh 'npm --version || true'
-              // echo 'INFO: Building frontend'
-              // sh 'pwd'
-              // sh 'ls -la'
+              sh 'node --version || true'
+              sh 'npm --version || true'
+              echo 'INFO: Building frontend'
+              sh 'pwd'
+              sh 'ls -la'
+              
               // git 'https://github.com/kuruho/frontend'
               // sh 'pwd'
               // sh 'ls -la'
               // sh 'npm --version'
               // sh 'npm --verbose install'
-              // sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'
-              
               sh '''#!/bin/bash -xe
 
-node --version || true
-npm --version || true
-pwd
-ls -la
 rm -rf frontend
 git clone https://github.com/kuruho/frontend
 cd frontend
@@ -49,8 +44,8 @@ pwd
 ls -la
 npm --version
 npm --verbose install
-PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start
 '''
+              // sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'              
             }
           }
         )
