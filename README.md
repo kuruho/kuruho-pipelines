@@ -39,7 +39,7 @@ Click **New Pipeline** to start the Blue Ocean pipeline creation wizard.
 * Connect to Github: Create an access key
   - Token description: `easy-jenkins @build-gmhome`
   - Select scopes: Accept defaults (repo:all, read:user, user:email)
-  - Click **Generate token`
+  - Click **Generate token**
 * Click icon to copy your new personal access token
 * On the Jenkins pipeline setup page, paste your Github access token and click **Connect**
 * Which organization does the repository belong to? **kuruho**
