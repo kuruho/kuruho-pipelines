@@ -32,7 +32,7 @@ pipeline {
               sh 'rm -rf frontend && pwd && ls -la'
               sh 'git clone https://github.com/kuruho/frontend'
               sh 'cd frontend && pwd && ls -la && npm --verbose install'
-              // sh 'PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'              
+              // sh 'cd frontend && pwd && ls -la && PORT=7000 WEBSOCKET_URL=http://localhost:7001 npm start'              
             }
           }
         )
