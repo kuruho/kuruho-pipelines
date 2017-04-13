@@ -14,11 +14,12 @@ pipeline {
             ws(dir: 'backend') {
               sh 'node --version || true'
               sh 'npm --version || true'
+              
               echo 'INFO: Building backend'
-              sh 'rm -rf backend; pwd; ls -al'
+              sh 'rm -rf backend && pwd && ls -la'
               sh 'git clone https://github.com/kuruho/backend.git'
-              sh 'cd backend && pwd && ls -al && npm --verbose install'
-              // sh 'cd backend && pwd && ls -al && NODE_ENV=production PORT=7001 VOLUMIO_WS=ws://192.168.40.10 node app.js'
+              sh 'cd backend && pwd && ls -la && npm --verbose install'
+              // sh 'cd backend && pwd && ls -la && NODE_ENV=production PORT=7001 VOLUMIO_WS=ws://192.168.40.10 node app.js'
             }
           },
           "Build-frontend": {
