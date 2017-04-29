@@ -47,4 +47,10 @@ Click **New Pipeline** to start the Blue Ocean pipeline creation wizard.
 * Choose a repository: `kuruho-pipelines`, then click **Create Pipeline**
 * Wait until the "Completed" status is displayed
 
+### Copyright and License
+
+**Copyright (C) 2017, [the Kuruho Team](https://github.com/kuruho/). All Rights Reserved**
+
+kuruho-pipelines is an Open Source Project, for details please see the [LICENSE](LICENSE) file inside this repository and the repository of the related projects.
+
 <!-- EOF -->
